@@ -8,7 +8,7 @@ For this project, we simulated working as data scientists for a homesharing comp
 3. Describe houses that meet the quality expectations of the Airbnb brand
 4. Use these predictions on identified houses to project potential revenue
 
-[!College](https://image.freepik.com/free-vector/welcome-high-school-university-study-architecture-construction-building-exterior-front_1284-41473.jpg)
+![College](https://image.freepik.com/free-vector/welcome-high-school-university-study-architecture-construction-building-exterior-front_1284-41473.jpg)
 
 
 # Team:
