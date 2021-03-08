@@ -28,7 +28,7 @@ def fillna_cats(Series):
     Series.fillna('DNE',inplace = True)
     return Series
 
-def impute_by_neighborhood(df,Series,method):
+def impute_by_neighborhood(df,colname,method):
     '''Returns series with missing values imputed by specifed method.
     
     Args:
@@ -46,7 +46,7 @@ def impute_by_neighborhood(df,Series,method):
     return df[Series].fillna(df.groupby('Neighborhood')[Series].transform(method))
 
 
-def switch_ordinals(df, Series):
+def switch_ordinals(df, colname):
     '''
     Returns a pandas series replacing null values with DNE (Does Not Exist) so they can be imputed.
     
