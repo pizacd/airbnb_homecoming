@@ -41,9 +41,9 @@ def impute_by_neighborhood(df,colname,method):
     if not isinstance(df, pd.DataFrame):
         raise TypeError('df argument must be of type pd.DataFrame')
         
-    if not isinstance(Series, str):
+    if not isinstance(colname, str):
         raise TypeError('Series but be the column name as a string')
-    return df[Series].fillna(df.groupby('Neighborhood')[Series].transform(method))
+    return df[colname].fillna(df.groupby('Neighborhood')[colname].transform(method))
 
 
 def switch_ordinals(df, colname):
@@ -55,9 +55,9 @@ def switch_ordinals(df, colname):
     df: pd.Dataframe, Dataframe to pass in
     Series: str, column name in the pandas dataframe.
     '''
-    if df[Series].isnull().sum()==0:
-        df[Series].replace({'Po':None,'Fa':1,'TA':2,'Gd':3,'Ex':4},inplace = True)
+    if df[colname].isnull().sum()==0:
+        df[colname].replace({'Po':None,'Fa':1,'TA':2,'Gd':3,'Ex':4},inplace = True)
     else:
-        df[Series].fillna('DNE',inplace = True)
-        df[Series].replace({'Po':None,'DNE':1,'Fa':2,'TA':3,'Gd':4,'Ex':5},inplace = True)
-    return df[Series]
+        df[colname].fillna('DNE',inplace = True)
+        df[colname].replace({'Po':None,'DNE':1,'Fa':2,'TA':3,'Gd':4,'Ex':5},inplace = True)
+    return df[colname]
